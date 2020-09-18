@@ -5,7 +5,7 @@ const upper = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", 
 const num = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 const spec = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "+", "=", "?", ".", "<", ">"];
 var container = [];
-var firstPass = [];
+// var firstPass = [];
 var lowerCase = false;
 var upperCase = false;
 var numbers = false;
@@ -16,7 +16,9 @@ var numbers = false;
 // function starts on click
 function writePassword() {
 
-
+    // clears array before use
+    container.length = 0;
+    // firstPass.length = 0;
 
     var characters = prompt("How many characters would you like? (between 8 and 128)");
     // restart if number outside range or null
@@ -41,7 +43,7 @@ function writePassword() {
     }
     if (upperCase) {
         container.push(...upper);
-        console.log(container);
+        // console.log(container);
     }
     if (numbers) {
         container.push(...num);
@@ -53,8 +55,8 @@ function writePassword() {
     }
     // while (start) {
     // call function with all criteria with length of characters
-    createPassword(characters);
-    start = false;
+    console.log(container);
+    const finalPass = createPassword(characters);
 
     // start = false;
     // Call function to get lowercase variables
@@ -73,12 +75,14 @@ function writePassword() {
 
 
 
-    // console.log(firstPass);
-    firstPass = firstPass.join("");
-    document.getElementById("password").value = firstPass;
+    // new variable to hold finallpass array and remove commas
+    const pass = finalPass.join("");
+    document.getElementById("password").value = pass;
 }
 
 function createPassword(length) {
+
+    const pass = [];
     // add criteria arrays to container
 
     // var container = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "+", "=", "?", ".", "<", ">"]
@@ -92,9 +96,11 @@ function createPassword(length) {
         //   grabs random character out of container
         var x = Math.floor(Math.random() * container.length);
         //   at the end of pass put random character
-        firstPass.push(container[x]);
+        pass.push(container[x]);
         // console.log(firstPass);
     }
+    // returns pass from this function
+    return pass;
 }
 
 
