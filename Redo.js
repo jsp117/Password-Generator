@@ -9,72 +9,70 @@ var firstPass = [];
 var lowerCase = false;
 var upperCase = false;
 var numbers = false;
-var start = true;
+
 
 
 
 // function starts on click
 function writePassword() {
-   
-
-    var start = true;
-    while (start) {
-        var characters = prompt("How many characters would you like? (between 8 and 128)");
-        // restart if number outside range or null
-        if (characters < 8 || characters > 128 || characters === null) {
-            alert("You must select between 8 and 128 characters.");
-            start = false;
-            return;
-        } else {
-            var lowerCase = confirm("Do you want lowercase letters?");
-            var upperCase = confirm("Do you want uppercase letters?");
-            var numbers = confirm("Do you want numbers?");
-            var special = confirm("Do you want special characters?");
-            if (lowerCase === false && upperCase === false && numbers === false && special === false) {
-                alert("You must select at least one character type");
-                start = false;
-            }
-
-            else {
-                start = true;
-            }
-
-
-            if (lowerCase) {
-                container.push(lower);
-                console.log(container);
-            } else if (upperCase) {
-                container.push(upper);
-                // console.log(container);
-            } else if (numbers) {
-                container.push(num);
-                // console.log(container);
-            } else if (special) {
-                container.push(spec);
-                // console.log(container);
-            }
-            // while (start) {
-            // call function with all criteria with length of characters
-            createPassword(characters);
-            start = false;
-            
-            // start = false;
-            // Call function to get lowercase variables
-
-            // Call function to get uppercase variables
-
-            // Call function to get numbers
-
-            // Call function to get special characters
-
-            // Call function to mix array of taken characters
-
-            // remove commas from array
 
 
 
-        }
+    var characters = prompt("How many characters would you like? (between 8 and 128)");
+    // restart if number outside range or null
+    if (characters < 8 || characters > 128 || characters === null) {
+        // last statement that executes in function
+        return alert("You must select between 8 and 128 characters.");
     }
+    var lowerCase = confirm("Do you want lowercase letters?");
+    var upperCase = confirm("Do you want uppercase letters?");
+    var numbers = confirm("Do you want numbers?");
+    var special = confirm("Do you want special characters?");
+
+    if (lowerCase === false && upperCase === false && numbers === false && special === false) {
+        return alert("You must select at least one character type");
+
+    }
+
+    if (lowerCase) {
+        // ... takes whatevers inside the array
+        container.push(...lower);
+        // console.log(container);
+    }
+    if (upperCase) {
+        container.push(...upper);
+        console.log(container);
+    }
+    if (numbers) {
+        container.push(...num);
+        // console.log(container);
+    }
+    if (special) {
+        container.push(...spec);
+        // console.log(container);
+    }
+    // while (start) {
+    // call function with all criteria with length of characters
+    createPassword(characters);
+    start = false;
+
+    // start = false;
+    // Call function to get lowercase variables
+
+    // Call function to get uppercase variables
+
+    // Call function to get numbers
+
+    // Call function to get special characters
+
+    // Call function to mix array of taken characters
+
+    // remove commas from array
+
+
+
+
+
     // console.log(firstPass);
     firstPass = firstPass.join("");
     document.getElementById("password").value = firstPass;
