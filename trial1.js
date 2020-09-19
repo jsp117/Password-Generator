@@ -31,7 +31,7 @@ var lowerCase;
 var upperCase;
 var numbers = true;
 var special;
-var selector = 1;
+var selector = 0;
 var start = false;
 var div = 0;
 //When user clicks generate password - Prompt user for criteria
