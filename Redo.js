@@ -37,7 +37,7 @@ function writePassword() {
     }
 
     if (lowerCase) {
-        // ... takes whatevers inside the array
+        // ... takes whatevers inside the array instead of adding a new array
         container.push(...lower);
         // console.log(container);
     }
@@ -58,32 +58,67 @@ function writePassword() {
     console.log(container);
     const finalPass = createPassword(characters);
 
-    // test for each character type - go through every index of finalPass and run this function on it - each character of finalPass
-    if(lowerCase){
-        var found = finalPass.some(function(letter){
-            // returns -1 if not in the array, otherwise it will return the number of the index in the array where letter is
-            return lower.indexOf(letter) >= 0;
-        })
-        if(lowerCase != found){
-            
+
+    // create for loop to add 4 random characters from each character type to finalPass
+    if (lowerCase) {
+        for (let i = 0; i < lower.length; i++) {
+            //   grabs random character out of lower array
+            var x = Math.floor(Math.random() * lower.length);
         }
+        // at finalPass index 1 add a random lowercase character
+        finalPass[1] = lower[x];
     }
-    console.log(found);
-    if(upperCase){
+    // console.log(finalPass[1]);
+    if (upperCase) {
+        for (let i = 0; i < upper.length; i++) {
+            //   grabs random character out of container
+            var x = Math.floor(Math.random() * upper.length);
+        }
+        finalPass[2] = upper[x];
+        // console.log(firstPass);
+    }
+    if (numbers) {
+        for (let i = 0; i < num.length; i++) {
+            //   grabs random character out of container
+            var x = Math.floor(Math.random() * num.length);
+        }
+        finalPass[3] = num[x];
+        // console.log(firstPass);
+    }
+    if (special) {
+        for (let i = 0; i < spec.length; i++) {
+            //   grabs random character out of container
+            var x = Math.floor(Math.random() * spec.length);
+        }
+        finalPass[4] = spec[x];
 
     }
-    if(numbers){
+    // console.log(firstPass);
 
-    }
-    if(special){
+    // test for each character type - go through every index of finalPass and run this function on it - each character of finalPass
+    // if(lowerCase){
+    //     var found = finalPass.some(function(letter){
+    //         // returns -1 if not in the array, otherwise it will return the number of the index in the array where letter is
+    //         return lower.indexOf(letter) >= 0;
+    //     })
+    //     if(lowerCase != found){
 
-    }
+    //     }
+    // }
+    // console.log(found);
+    // if(upperCase){
+
+    // }
+    // if(numbers){
+
+    // }
+    // if(special){
+
+    // }
 
 
 
-
-
-    // new variable to hold finallpass array and remove commas
+    // new variable to hold finalpass array and remove commas
     const pass = finalPass.join("");
     document.getElementById("password").value = pass;
 }
@@ -99,7 +134,7 @@ function createPassword(length) {
     // num: ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"],
     // special: ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "+", "=", "?", ".", "<", ">"],
 
-    // add random characters from container to firstPass array
+    // generates random number between 1 and container length and adds the index of that number to pass array
     for (var i = 0; i < length; i++) {
         //   grabs random character out of container
         var x = Math.floor(Math.random() * container.length);
