@@ -58,18 +58,26 @@ function writePassword() {
     console.log(container);
     const finalPass = createPassword(characters);
 
-    // start = false;
-    // Call function to get lowercase variables
+    // test for each character type - go through every index of finalPass and run this function on it - each character of finalPass
+    if(lowerCase){
+        var found = finalPass.some(function(letter){
+            // returns -1 if not in the array, otherwise it will return the number of the index in the array where letter is
+            return lower.indexOf(letter) >= 0;
+        })
+        if(lowerCase != found){
+            
+        }
+    }
+    console.log(found);
+    if(upperCase){
 
-    // Call function to get uppercase variables
+    }
+    if(numbers){
 
-    // Call function to get numbers
+    }
+    if(special){
 
-    // Call function to get special characters
-
-    // Call function to mix array of taken characters
-
-    // remove commas from array
+    }
 
 
 
@@ -102,7 +110,6 @@ function createPassword(length) {
     // returns pass from this function
     return pass;
 }
-
 
 
 
