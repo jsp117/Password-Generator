@@ -7,8 +7,8 @@ For this project, the goal was to create a web application utilizing JavaScript 
 
 * [Installation](#installation)
 * [Usage](#usage)
-* [Built With](#built)
-* [Deployed Link](#deployed)
+* [Built With](#builtwith)
+* [Deployed Link](#deployedlink)
 * [Author](#author)
 * [Images](#images)
 * [License](#license)
@@ -26,7 +26,7 @@ When a user clicks the generate button, they are met with a series of prompts fo
 * [Github](https://github.com/)
 
 ## Deployed Link
-[Jon SanPedro Portfolio Website](https://jsp117.github.io/Password-Generator/)
+[Password Generator](https://jsp117.github.io/Password-Generator/)
 
 ## Author
 Jonathan SanPedro - Bachelors of Information Technology Rutgers New Brunswick - Student at Berkeley Coding Bootcamp
