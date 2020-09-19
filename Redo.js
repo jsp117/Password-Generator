@@ -22,9 +22,9 @@ function writePassword() {
 
     var characters = prompt("How many characters would you like? (between 8 and 128)");
     // restart if number outside range or null
-    if (characters < 8 || characters > 128 || characters === null) {
+    if (characters < 8 || characters > 128 || characters === null || isNaN(characters)) {
         // last statement that executes in function
-        return alert("You must select between 8 and 128 characters.");
+        return alert("You must input a number between 8 and 128.");
     }
     var lowerCase = confirm("Do you want lowercase letters?");
     var upperCase = confirm("Do you want uppercase letters?");
@@ -33,9 +33,8 @@ function writePassword() {
 
     if (lowerCase === false && upperCase === false && numbers === false && special === false) {
         return alert("You must select at least one character type");
-
     }
-
+    // add criteria arrays to container
     if (lowerCase) {
         // ... takes whatevers inside the array instead of adding a new array
         container.push(...lower);
@@ -126,13 +125,6 @@ function writePassword() {
 function createPassword(length) {
 
     const pass = [];
-    // add criteria arrays to container
-
-    // var container = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "+", "=", "?", ".", "<", ">"]
-    // lower: ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"],
-    // upper: ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"],
-    // num: ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"],
-    // special: ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", "+", "=", "?", ".", "<", ">"],
 
     // generates random number between 1 and container length and adds the index of that number to pass array
     for (var i = 0; i < length; i++) {
@@ -147,12 +139,6 @@ function createPassword(length) {
 }
 
 
-
-// Write password to the #password input
-// var password = generatePassword();
-// var passwordText = document.querySelector("#password");
-
-// passwordText.value = password;
 
 
 
