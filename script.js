@@ -21,9 +21,9 @@ function writePassword() {
     // firstPass.length = 0;
 
     var characters = prompt("How many characters would you like? (between 8 and 128)");
-    // restart if number outside range or null
+    // return if number outside range or null
     if (characters < 8 || characters > 128 || characters === null || isNaN(characters)) {
-        // last statement that executes in function
+        // return = last statement that executes in function
         return alert("You must input a number between 8 and 128.");
     }
     var lowerCase = confirm("Do you want lowercase letters?");
@@ -57,8 +57,7 @@ function writePassword() {
     console.log(container);
     const finalPass = createPassword(characters);
 
-
-    // create for loop to add 4 random characters from each character type to finalPass
+    // if a criteria is selected, create for loop to add 4 random characters from each character type to finalPass
     if (lowerCase) {
         for (let i = 0; i < lower.length; i++) {
             //   grabs random character out of lower array
@@ -74,7 +73,7 @@ function writePassword() {
             var x = Math.floor(Math.random() * upper.length);
         }
         finalPass[2] = upper[x];
-        // console.log(firstPass);
+        // console.log(finalPass);
     }
     if (numbers) {
         for (let i = 0; i < num.length; i++) {
@@ -82,7 +81,7 @@ function writePassword() {
             var x = Math.floor(Math.random() * num.length);
         }
         finalPass[3] = num[x];
-        // console.log(firstPass);
+        // console.log(finalPass);
     }
     if (special) {
         for (let i = 0; i < spec.length; i++) {
@@ -90,9 +89,7 @@ function writePassword() {
             var x = Math.floor(Math.random() * spec.length);
         }
         finalPass[4] = spec[x];
-
     }
-    // console.log(firstPass);
 
     // test for each character type - go through every index of finalPass and run this function on it - each character of finalPass
     // if(lowerCase){
@@ -115,8 +112,6 @@ function writePassword() {
 
     // }
 
-
-
     // new variable to hold finalpass array and remove commas
     const pass = finalPass.join("");
     document.getElementById("password").value = pass;
@@ -137,21 +132,6 @@ function createPassword(length) {
     // returns pass from this function
     return pass;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
