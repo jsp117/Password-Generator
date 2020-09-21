@@ -58,19 +58,19 @@ function writePassword() {
     // if a criteria is selected, create for loop to add 4 random characters from each character type to finalPass
     if (lowerCase) {
         finalPass[0] = addOne(lower);
-        console.log("one lower: " + finalPass);
+        // console.log("one lower: " + finalPass);
     }
     if (upperCase) {
         finalPass[1] = addOne(upper);
-        console.log("one upper: " + finalPass);
+        // console.log("one upper: " + finalPass);
     }
     if (numbers) {
         finalPass[2] = addOne(num);
-        console.log("one number: " + finalPass);
+        // console.log("one number: " + finalPass);
     }
     if (special) {
         finalPass[3] = addOne(spec);
-        console.log("one special: " + finalPass);
+        // console.log("one special: " + finalPass);
     }
 
     // shuffle finalPass array
@@ -112,12 +112,11 @@ function createPassword(char) {
 // function to add one letter of each character type
 function addOne(array){
     var oneOfEach = 0;
-    for (let i = 0; i < array.length; i++) {
         //   grabs random character out of array
         var x = Math.floor(Math.random() * array.length);
-    }
-    // at finalPass index 1 add a random lowercase character
+    // set variable to random character value
     oneOfEach = array[x];
+    // console.log(oneOfEach);
     return oneOfEach;
 }
 
